@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY2']
+SECRET_KEY = '9kg-@#1!_1kg)9_jo9!$aej7(1u7xc@^3=r8q(oc09n)a!!ct1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['mybrandblog.herokuapp.com']
+ALLOWED_HOSTS = ['mybrandblog.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
+    # 'storages',
 ]
 
 MIDDLEWARE = [
@@ -134,19 +134,17 @@ LOGIN_URL = 'login'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID2']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY2']
-AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME2']
+# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID2']
+# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY2']
+# AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME2']
 
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_S3_REGION_NAME = 'ap-south-1' #change to your region
-AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_S3_REGION_NAME = 'ap-south-1'  # change to your region
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-django_heroku.settings(locals())
-
-
+# django_heroku.settings(locals())
